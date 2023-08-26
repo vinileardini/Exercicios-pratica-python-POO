@@ -26,4 +26,30 @@
 
 #Lembre-se de testar o programa para diferentes números de horas e tipos de chocolates para garantir que ele funcione corretamente. Isso ajudará o Sr. Garcia a otimizar a produção em sua fábrica de chocolates! 
 
+continuidade = 'SIM'
+
+
+while(continuidade == 'SIM'):
+    entrada_hr = float(input('Quantidade de horas disponíveis para produção:'))
+
+    entrada_chocolate = input('Qual tipo de chocolate deseja produzir (ao leite),(branco),(amargo):').upper()
+
+
+    if(entrada_chocolate == 'AO LEITE'):
+        calculaAoLeite = entrada_hr/2
+        print(f'É possível produzir {calculaAoLeite} barras de chocolate ao leite')
+    elif(entrada_chocolate == 'BRANCO'):
+        calculaBranco = entrada_hr/1.5
+        print(f'É possível produzir {calculaBranco} barras de chocolate branco')
+    else:
+        calculaAmargo = entrada_hr/2.5
+        print(f'É possível produzir {calculaAmargo} barras de chocolate amargo')
+
+    continuidade = input('Deseja calcular novamente (sim) (nao):').upper()
+    
+
+print('Encerrando')
+
+
+
 

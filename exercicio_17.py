@@ -21,3 +21,27 @@
 
 #**Restrições:**- Certifique-se de que a entrada para a energia está no intervalo correto.
 #- A entrada para os obstáculos deve ser 'sim' ou 'não' (sem a necessidade de considerar variações de capitalização).
+
+entrada_energia = int(input('Qual a energia inicial do robô (1-100):'))
+
+pista = []
+entrada_segmento = []
+
+if(entrada_energia < 1 or entrada_energia> 100):
+    print('Insira um valor de energia válido')
+else:
+    for x in range(1,11):
+        entrada_segmento[x] = input(f'O segmento {x} possui obstáculo (sim) (nao):').upper()
+
+        if(entrada_segmento[x] == 'SIM'):
+            reducao_energia = entrada_energia - 3
+        
+        else:
+            reducao_energia = entrada_energia - 1
+        
+    
+    if(reducao_energia > 0):
+        print('A pista foi concluída')
+    else:
+        print('A pista não foi concluída, com o robô parando no segmento')
+    
