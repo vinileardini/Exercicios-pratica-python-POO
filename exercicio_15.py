@@ -2,23 +2,24 @@
 
 entrada = int(input('Insira um valor para que seja calculado seu fatorial:'))
 
-numero_calc = 0
+resultado = 1
+contagem = 1
 
-fatorial = []
-
-fatorial.append(entrada)
-
-if(entrada == 1):
-    print(1)
-
+while(entrada>=contagem):
+    resultado *= contagem
+    contagem += 1
+    
+if(resultado != 1):
+    print(resultado)
 else:
-    while(entrada>1):
-       calculo = entrada-1
-       entrada -= 1
-       fatorial.append(calculo)
-       
+    print('fim')
 
-print(f'{entrada}! = {fatorial}')
+
+
+
+
+
+
 
 
 

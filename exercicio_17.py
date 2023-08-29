@@ -26,22 +26,34 @@ entrada_energia = int(input('Qual a energia inicial do robô (1-100):'))
 
 pista = []
 entrada_segmento = []
+quant_seg = 1
+estagio_final_energia = 0
 
 if(entrada_energia < 1 or entrada_energia> 100):
     print('Insira um valor de energia válido')
 else:
-    for x in range(1,11):
-        entrada_segmento[x] = input(f'O segmento {x} possui obstáculo (sim) (nao):').upper()
+    while(quant_seg <= 10):
 
-        if(entrada_segmento[x] == 'SIM'):
-            reducao_energia = entrada_energia - 3
+        entrada = input(f'O segmento {quant_seg} possui obstáculo (sim) (nao):').upper()
         
+        entrada_segmento.append(entrada)
+
+        if(entrada_segmento[quant_seg] == 'SIM'):
+    
+            if(reducao_energia == 0):
+                
+                estagio_final_energia =  entrada_segmento[quant_seg]
+                
+            else:  
+                reducao_energia = reducao_energia-3
+                
         else:
             reducao_energia = entrada_energia - 1
-        
+
+        quant_seg = quant_seg+1
     
     if(reducao_energia > 0):
         print('A pista foi concluída')
     else:
-        print('A pista não foi concluída, com o robô parando no segmento')
+        print(f'A pista não foi concluída, com o robô parando no segmento {estagio_final_energia}')
     
