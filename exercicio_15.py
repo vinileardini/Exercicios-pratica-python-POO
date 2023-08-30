@@ -10,7 +10,7 @@ while(entrada>=contagem):
     contagem += 1
     
 if(resultado != 1):
-    print(resultado)
+    print(f' {entrada}! = {resultado}')
 else:
     print('fim')
 

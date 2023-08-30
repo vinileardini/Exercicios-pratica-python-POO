@@ -25,7 +25,7 @@
 entrada_energia = int(input('Qual a energia inicial do robô (1-100):'))
 
 pista = []
-entrada_segmento = []
+entrada_segmento = ['']
 quant_seg = 1
 estagio_final_energia = 0
 
@@ -40,20 +40,24 @@ else:
 
         if(entrada_segmento[quant_seg] == 'SIM'):
     
-            if(reducao_energia == 0):
+            if(entrada_energia == 0):
                 
-                estagio_final_energia =  entrada_segmento[quant_seg]
+                estagio_final_energia = quant_seg
                 
             else:  
-                reducao_energia = reducao_energia-3
+                entrada_energia = entrada_energia-3
                 
         else:
-            reducao_energia = entrada_energia - 1
+            entrada_energia = entrada_energia-1
 
-        quant_seg = quant_seg+1
+            if(entrada_energia == 0):
+
+                estagio_final_energia = quant_seg
+
+        quant_seg += 1
     
-    if(reducao_energia > 0):
-        print('A pista foi concluída')
+    if(entrada_energia > 0):
+        print(f'A pista foi concluída, com {entrada_energia} unidades de energia restantes')
     else:
         print(f'A pista não foi concluída, com o robô parando no segmento {estagio_final_energia}')
     
